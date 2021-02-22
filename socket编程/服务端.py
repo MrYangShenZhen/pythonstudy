@@ -1,0 +1,11 @@
+import socket
+phone=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+phone.bind(('192.168.0.103',7000))
+phone.listen(5)
+print('开始启动服务')
+conn,addr=phone.accept()
+msg=conn.recv(1024)
+print('收到客户端消息:',msg)
+conn.send("你好".encode('utf-8'))
+conn.close()
+phone.close()

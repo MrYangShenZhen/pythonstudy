@@ -1,0 +1,62 @@
+#########字典(字典无序）
+######key:列表、字典不能为key
+#索引获取Key的值
+'''
+info={'k1':'v1','k2':'v2'}
+v=info['k1']
+print(v)
+'''
+#删除key及其对应的值
+'''
+info={'k1':'v1','k2':'v2'}
+del info['k2']
+print(info)
+'''
+#字典支持for循环
+'''
+info={'k1':'v1','k2':'v2'}
+for item in info.keys():
+    print(item,info[item])
+    '''
+#根据序列创建字典并指定统一的值
+'''
+v=dict.fromkeys(["k1",123,"122a"],123)
+print(v)
+'''
+#根据key获取值，不存在打印为空
+'''
+info={'k1':'v1','k2':'v2'}
+v = info.get("k1",123)
+print(v)
+'''
+#删除k1及其值，并将被删除的key的值赋给v
+'''
+info={'k1':'v1','k2':'v2'}
+v=info.pop("k1")
+print(v,info)
+'''
+#随机删除获取key和其对应的值
+'''
+info={'k1':'v1','k2':'v2'}
+v1,v2=info.popitem()
+print(v1,v2)
+'''
+#随机删除获取key和其对应的值(以字典展示）
+'''
+info={'k1':'v1','k2':'v2'}
+v=info.popitem()
+print(v)
+'''
+#设置值，若存在，获取当前key对应的值：若不存在，设置Key及对应的值，并获取Key对应的值
+'''
+info={'k1':'v1','k2':'v2'}
+v=info.setdefault('k3','k1')#(k3是key,k1是值）
+print(info,v)
+'''
+#更新（如果key存在，修改key的值，如果不存在，向字典插入一个新的key及对应的值）
+info={'k1':'v1','k2':'v2'}
+info.update({'k1':'111','k4':123})
+print(info)
+#更新的另一种方式
+info.update(k2='test',k4=234)
+print(info)

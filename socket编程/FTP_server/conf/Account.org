@@ -1,0 +1,4 @@
+[admin]
+quotation = 100
+password = 000000
+
